@@ -628,7 +628,7 @@ export default class VideoPlayer extends Component {
    * @return {float} position of seeker handle in px based on currentTime
    */
   calculateSeekerPosition() {
-    const percent = this.state.currentTime / this.state.duration;
+    const percent = this.state.duration > 0 ? this.state.currentTime / this.state.duration : 0;
     return this.player.seekerWidth * percent;
   }
 
